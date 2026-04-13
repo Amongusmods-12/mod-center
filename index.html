@@ -2,56 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mod Website</title>
+<title>Mod Center</title>
 <style>
     body {
-        background: #111;
+        background: #0d0d0d;
         color: white;
-        font-family: Arial;
+        font-family: Arial, sans-serif;
         text-align: center;
-        padding-top: 80px;
+        padding-top: 60px;
     }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
     .btn {
         display: block;
-        width: 300px;
+        width: 320px;
         margin: 20px auto;
         padding: 20px;
-        background: #333;
-        border-radius: 10px;
+        background: #222;
+        border-radius: 12px;
         font-size: 22px;
         cursor: pointer;
         transition: 0.2s;
     }
+
     .btn:hover {
-        background: #555;
+        background: #444;
     }
+
     #guide, #roomcodes {
         display: none;
         margin-top: 40px;
-        padding: 20px;
-        background: #222;
-        border-radius: 10px;
-        width: 70%;
+        padding: 25px;
+        background: #1a1a1a;
+        border-radius: 12px;
+        width: 75%;
         margin-left: auto;
         margin-right: auto;
+        text-align: left;
     }
+
     #roomInput {
         width: 300px;
         padding: 10px;
         font-size: 18px;
         margin-bottom: 20px;
     }
+
     #messages {
         background: #000;
         padding: 20px;
         border-radius: 10px;
-        min-height: 100px;
+        min-height: 120px;
+        margin-top: 20px;
     }
 </style>
 </head>
 <body>
 
-<h1>Mod Website</h1>
+<h1>Mod Center</h1>
 
 <div class="btn" onclick="showGuide()">How to Use the Mod Files</div>
 <div class="btn" onclick="downloadMods()">Install Mods</div>
@@ -59,75 +71,14 @@
 
 <!-- GUIDE SECTION -->
 <div id="guide">
-    <h2>How to Use the Mod Files</h2>
-    <p>01
-Download the Mod Pack
-Required First
-Get the full mod bundle from the 'Install Mods' button on the website.
-
-Click the Install Mods button on the homepage
-
-A file named mods.zip will start downloading
-
-Save it somewhere easy to find (Desktop or Downloads)
-
-02
-Extract the ZIP File
-You need to unzip the file before using the mods.
-
-Right‑click mods.zip
-
-Select Extract All…
-
-Choose a folder to extract to
-
-After extraction, you will see multiple mod ZIPs or folders inside
-
-03
-Locate Your Game Folder
-Important
-You must place the mod files inside the correct game directory.
-
-Open your game installation folder
-
-If it's Among Us (Epic Games), the folder is usually:
-C:\Program Files\Epic Games\AmongUs
-
-If you installed the game somewhere else, go to that location instead
-
-04
-Create or Open the Mods Folder
-This is where all mod files must be placed.
-
-Inside the game folder, look for a folder named BepInEx
-
-If it exists, open it and find plugins
-
-If it does NOT exist, create a new folder named BepInEx, then inside it create another folder named plugins
-
-05
-Move the Mod Files
-Place all mod files into the correct folder so the game can load them.
-
-Open the extracted mod files from Step 2
-
-Drag ALL mod DLLs or mod folders into:
-Among Us → BepInEx → plugins
-
-Make sure the files are NOT still zipped
-
-The folder should now contain multiple .dll files
-
-06
-Launch the Game
-Final Step
-Start the game to confirm the mods are working.
-
-Open Among Us normally
-
-If the mods installed correctly, you will see a BepInEx console window or a mod menu
-
-Join or create a lobby to test everything<p>
+    <h2>How to Install the Mod Files</h2>
+    <p><b>1.</b> Download the mod pack using the “Install Mods” button.</p>
+    <p><b>2.</b> Extract the ZIP file using WinRAR or 7‑Zip.</p>
+    <p><b>3.</b> Open your Among Us folder.</p>
+    <p><b>4.</b> Drag all mod files into the Among Us folder.</p>
+    <p><b>5.</b> If asked to replace files, click YES.</p>
+    <p><b>6.</b> Launch the game — the mods should load automatically.</p>
+    <p><b>7.</b> If the game crashes, verify your game files and reinstall the mod pack.</p>
 </div>
 
 <!-- ROOM CODES SECTION -->
@@ -146,7 +97,7 @@ function showGuide() {
 }
 
 function downloadMods() {
-    window.location.href = "mods.zip"; // replace with your zip file
+    window.location.href = "https://www.dropbox.com/scl/fi/atgwmxwiuoz2rs1fhndaj/among-us-mods.zip.zip?rlkey=dc2o79n7c5cajm2q30644oqdj&st=0i2jijst&dl=1";
 }
 
 function showRoomCodes() {
@@ -155,15 +106,3 @@ function showRoomCodes() {
 }
 
 function addRoomCode() {
-    let code = document.getElementById("roomInput").value;
-    if (code.trim() === "") return;
-
-    let box = document.getElementById("messages");
-    box.innerHTML += "<p>" + code + "</p>";
-
-    document.getElementById("roomInput").value = "";
-}
-</script>
-
-</body>
-</html>
