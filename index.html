@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mod Website</title>
+<style>
+    body {
+        background: #111;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+        padding-top: 80px;
+    }
+    .btn {
+        display: block;
+        width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #333;
+        border-radius: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .btn:hover {
+        background: #555;
+    }
+    #guide, #roomcodes {
+        display: none;
+        margin-top: 40px;
+        padding: 20px;
+        background: #222;
+        border-radius: 10px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #roomInput {
+        width: 300px;
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    #messages {
+        background: #000;
+        padding: 20px;
+        border-radius: 10px;
+        min-height: 100px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Mod Website</h1>
+
+<div class="btn" onclick="showGuide()">How to Use the Mod Files</div>
+<div class="btn" onclick="downloadMods()">Install Mods</div>
+<div class="btn" onclick="showRoomCodes()">Room Codes</div>
+
+<!-- GUIDE SECTION -->
+<div id="guide">
+    <h2>How to Use the Mod Files</h2>
+    <p>Put your guide text here. I can write it for you if you want.</p>
+</div>
+
+<!-- ROOM CODES SECTION -->
+<div id="roomcodes">
+    <h2>Room Codes</h2>
+    <input id="roomInput" placeholder="Enter room code">
+    <button onclick="addRoomCode()">Submit</button>
+
+    <div id="messages"></div>
+</div>
+
+<script>
+function showGuide() {
+    document.getElementById("guide").style.display = "block";
+    document.getElementById("roomcodes").style.display = "none";
+}
+
+function downloadMods() {
+    window.location.href = "mods.zip"; // replace with your zip file
+}
+
+function showRoomCodes() {
+    document.getElementById("guide").style.display = "none";
+    document.getElementById("roomcodes").style.display = "block";
+}
+
+function addRoomCode() {
+    let code = document.getElementById("roomInput").value;
+    if (code.trim() === "") return;
+
+    let box = document.getElementById("messages");
+    box.innerHTML += "<p>" + code + "</p>";
+
+    document.getElementById("roomInput").value = "";
+}
+</script>
+
+</body>
+</html>
