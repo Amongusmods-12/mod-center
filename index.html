@@ -72,13 +72,12 @@
 <!-- GUIDE SECTION -->
 <div id="guide">
     <h2>How to Install the Mod Files</h2>
-    <p><b>1.</b> Download the mod pack using the “Install Mods” button.</p>
-    <p><b>2.</b> Extract the ZIP file using WinRAR or 7‑Zip.</p>
-    <p><b>3.</b> Open your Among Us folder.</p>
-    <p><b>4.</b> Drag all mod files into the Among Us folder.</p>
-    <p><b>5.</b> If asked to replace files, click YES.</p>
-    <p><b>6.</b> Launch the game — the mods should load automatically.</p>
-    <p><b>7.</b> If the game crashes, verify your game files and reinstall the mod pack.</p>
+    <p><b>1.</b> Click “Install Mods” to download the ZIP.</p>
+    <p><b>2.</b> Extract the ZIP using WinRAR or 7‑Zip.</p>
+    <p><b>3.</b> Open your Among Us game folder.</p>
+    <p><b>4.</b> Drag all mod files into the folder.</p>
+    <p><b>5.</b> Replace files if asked.</p>
+    <p><b>6.</b> Launch the game — mods will load automatically.</p>
 </div>
 
 <!-- ROOM CODES SECTION -->
@@ -106,3 +105,15 @@ function showRoomCodes() {
 }
 
 function addRoomCode() {
+    let code = document.getElementById("roomInput").value;
+    if (code.trim() === "") return;
+
+    let box = document.getElementById("messages");
+    box.innerHTML += "<p>" + code + "</p>";
+
+    document.getElementById("roomInput").value = "";
+}
+</script>
+
+</body>
+</html>
